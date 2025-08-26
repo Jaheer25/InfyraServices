@@ -1,0 +1,876 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infyra Computer Services - Professional IT Solutions & Digital Marketing Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0A192F',
+                        'cyan': '#00B4D8',
+                        'light-gray': '#E0E0E0'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="font-inter bg-white">
+    
+    <!-- @COMPONENT: NavigationBar [responsive navigation with auth states] -->
+    <nav class="bg-navy shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-cyan text-2xl font-bold">
+                        <i class="fas fa-desktop mr-2"></i>Infyra
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4" data-mock="true">
+                        <a href="#home" class="text-white hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#services" class="text-white hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                        <a href="#courses" class="text-white hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Digital Marketing</a>
+                        <a href="#about" class="text-white hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#contact" class="text-white hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6 space-x-3" data-mock="true">
+                        <button class="text-white hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors" data-event="click:showLoginModal">Login</button>
+                        <button class="bg-cyan hover:bg-cyan/90 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors" data-event="click:showRegisterModal">Register</button>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-white hover:text-cyan" data-event="click:toggleMobileMenu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu" data-mock="true">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-navy/95 backdrop-blur-sm">
+                <a href="#home" class="text-white hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#services" class="text-white hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#courses" class="text-white hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Digital Marketing</a>
+                <a href="#about" class="text-white hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#contact" class="text-white hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <div class="border-t border-gray-700 pt-4">
+                    <button class="text-white hover:text-cyan block px-3 py-2 rounded-md text-base font-medium w-full text-left">Login</button>
+                    <button class="bg-cyan hover:bg-cyan/90 text-white block px-3 py-2 rounded-md text-base font-medium w-full mt-2">Register</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: NavigationBar -->
+
+    <!-- @COMPONENT: HeroSection [landing page hero with CTA] -->
+    <section id="home" class="pt-16 bg-gradient-to-br from-navy via-navy to-blue-900 relative overflow-hidden">
+        <!-- Background geometric shapes -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-cyan rounded-full blur-3xl"></div>
+            <div class="absolute top-40 right-20 w-48 h-48 bg-purple-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-1/3 w-40 h-40 bg-teal-400 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6" data-mock="true">
+                    Professional IT Solutions & <span class="text-cyan">Digital Marketing Training</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto" data-mock="true">
+                    Expert computer services and comprehensive digital marketing courses in Barasat. Transform your business with modern technology solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-cyan hover:bg-cyan/90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg" data-event="click:scrollToServices">
+                        <i class="fas fa-tools mr-2"></i>Our Services
+                    </button>
+                    <button class="border-2 border-cyan text-cyan hover:bg-cyan hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105" data-event="click:scrollToCourses">
+                        <i class="fas fa-graduation-cap mr-2"></i>Digital Marketing Course
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: ServicesSection [computer services showcase] -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Computer Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Professional IT solutions for individuals and businesses. From repairs to maintenance, we've got you covered.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: services.map(service => ( -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 text-center" data-mock="true">
+                    <div class="bg-cyan/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-wrench text-2xl text-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-4">Computer Repair</h3>
+                    <p class="text-gray-600 mb-6">Expert diagnosis and repair of desktop and laptop computers. Quick turnaround time with quality parts.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Hardware diagnostics</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Software troubleshooting</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Virus removal</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 text-center" data-mock="true">
+                    <div class="bg-cyan/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-cogs text-2xl text-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-4">System Maintenance</h3>
+                    <p class="text-gray-600 mb-6">Regular maintenance services to keep your systems running smoothly and efficiently.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-cyan mr-2"></i>System optimization</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Regular updates</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Performance tuning</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 text-center" data-mock="true">
+                    <div class="bg-cyan/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-network-wired text-2xl text-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-4">Network Setup</h3>
+                    <p class="text-gray-600 mb-6">Professional network installation and configuration for homes and small businesses.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-cyan mr-2"></i>WiFi setup</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Router configuration</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Security setup</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 text-center" data-mock="true">
+                    <div class="bg-cyan/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-4">Data Recovery</h3>
+                    <p class="text-gray-600 mb-6">Professional data recovery services for corrupted or lost files from various storage devices.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Hard drive recovery</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>USB/SD card recovery</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>File restoration</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 text-center" data-mock="true">
+                    <div class="bg-cyan/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-download text-2xl text-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-4">Software Installation</h3>
+                    <p class="text-gray-600 mb-6">Complete software setup and installation services including operating systems and applications.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-cyan mr-2"></i>OS installation</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Driver updates</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Software configuration</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 text-center" data-mock="true">
+                    <div class="bg-cyan/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-laptop text-2xl text-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-4">Custom Solutions</h3>
+                    <p class="text-gray-600 mb-6">Tailored IT solutions for specific business needs and requirements.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Business consulting</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>System integration</li>
+                        <li><i class="fas fa-check text-cyan mr-2"></i>Technical support</li>
+                    </ul>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesSection -->
+
+    <!-- @COMPONENT: DigitalMarketingSection [course information and modules] -->
+    <section id="courses" class="py-20 bg-gradient-to-br from-navy to-blue-900 relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 right-10 w-64 h-64 bg-cyan rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-48 h-48 bg-purple-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Digital Marketing Course</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">Professional module designed to make you industry-ready in digital marketing</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Course Packages</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-cyan/20" data-mock="true">
+                            <h4 class="text-xl font-semibold text-cyan mb-2">3 Months - Basic Computer</h4>
+                            <p class="text-gray-300 mb-4">Foundation course covering essential computer skills and digital literacy</p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li><i class="fas fa-check text-cyan mr-2"></i>Computer fundamentals</li>
+                                <li><i class="fas fa-check text-cyan mr-2"></i>Microsoft Office suite</li>
+                                <li><i class="fas fa-check text-cyan mr-2"></i>Internet basics</li>
+                                <li><i class="fas fa-check text-cyan mr-2"></i>Email and communication</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-cyan/20" data-mock="true">
+                            <h4 class="text-xl font-semibold text-cyan mb-2">6 Months - Digital Marketing</h4>
+                            <p class="text-gray-300 mb-4">Comprehensive digital marketing training with hands-on projects</p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li><i class="fas fa-check text-cyan mr-2"></i>Complete digital marketing curriculum</li>
+                                <li><i class="fas fa-check text-cyan mr-2"></i>SEO, SEM, SMM training</li>
+                                <li><i class="fas fa-check text-cyan mr-2"></i>Content and email marketing</li>
+                                <li><i class="fas fa-check text-cyan mr-2"></i>Analytics and reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <h3 class="text-2xl font-bold text-white mb-6">Why Choose Our Course?</h3>
+                    <div class="space-y-4" data-mock="true">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-star text-cyan mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-white">Industry-Ready Curriculum</h4>
+                                <p class="text-gray-300 text-sm">Latest tools and techniques used by professionals</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-users text-cyan mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-white">Hands-on Training</h4>
+                                <p class="text-gray-300 text-sm">Real projects and practical experience</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-certificate text-cyan mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-white">Professional Certification</h4>
+                                <p class="text-gray-300 text-sm">Industry-recognized certificates upon completion</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-briefcase text-cyan mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-white">Job Placement Support</h4>
+                                <p class="text-gray-300 text-sm">Career guidance and placement assistance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Course Modules -->
+            <div class="bg-white rounded-2xl p-8 mb-8">
+                <h3 class="text-2xl font-bold text-navy mb-8 text-center">Digital Marketing Course Modules</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- @MAP: courseModules.map(module => ( -->
+                    <div class="bg-gray-50 rounded-lg p-6" data-mock="true">
+                        <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-lightbulb text-cyan"></i>
+                        </div>
+                        <h4 class="font-semibold text-navy mb-3">Introduction to Digital Marketing</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• What is Digital Marketing?</li>
+                            <li>• Traditional vs. Digital Marketing</li>
+                            <li>• Website Basics</li>
+                            <li>• Domain & Hosting</li>
+                            <li>• WordPress website setup</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6" data-mock="true">
+                        <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-search text-cyan"></i>
+                        </div>
+                        <h4 class="font-semibold text-navy mb-3">Search Engine Optimization (SEO)</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• On-page SEO (keywords, content, meta tags)</li>
+                            <li>• Off-page SEO (backlinks, guest posting)</li>
+                            <li>• Technical SEO (speed, mobile-friendly)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6" data-mock="true">
+                        <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-ad text-cyan"></i>
+                        </div>
+                        <h4 class="font-semibold text-navy mb-3">Search Engine Marketing (SEM)</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Google Ads (Search, Display, Video Ads)</li>
+                            <li>• Pay-per-click campaigns</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6" data-mock="true">
+                        <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-share-alt text-cyan"></i>
+                        </div>
+                        <h4 class="font-semibold text-navy mb-3">Social Media Marketing (SMM)</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Facebook, Instagram, LinkedIn marketing</li>
+                            <li>• Paid campaigns (Meta Ads Manager)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6" data-mock="true">
+                        <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-edit text-cyan"></i>
+                        </div>
+                        <h4 class="font-semibold text-navy mb-3">Content Marketing</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Blogging & article writing</li>
+                            <li>• Copywriting basics</li>
+                            <li>• Content calendar</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6" data-mock="true">
+                        <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-envelope text-cyan"></i>
+                        </div>
+                        <h4 class="font-semibold text-navy mb-3">Email Marketing</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Email campaign tools (Mailchimp, Sendinblue)</li>
+                            <li>• Lead generation strategies</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6" data-mock="true">
+                        <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-handshake text-cyan"></i>
+                        </div>
+                        <h4 class="font-semibold text-navy mb-3">Affiliate & Influencer Marketing</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Earning through referrals</li>
+                            <li>• Working with influencers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6" data-mock="true">
+                        <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-cyan"></i>
+                        </div>
+                        <h4 class="font-semibold text-navy mb-3">Analytics & Reporting</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Google Analytics basics</li>
+                            <li>• Social media insights</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6" data-mock="true">
+                        <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-plus text-cyan"></i>
+                        </div>
+                        <h4 class="font-semibold text-navy mb-3">Extra Skills (Optional)</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Canva & Photoshop (Graphic Designing)</li>
+                            <li>• Video Editing (for reels & YouTube)</li>
+                            <li>• Basics of E-commerce & Dropshipping</li>
+                        </ul>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="bg-cyan hover:bg-cyan/90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg" data-event="click:showEnrollmentModal">
+                    <i class="fas fa-graduation-cap mr-2"></i>Enroll Now
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: DigitalMarketingSection -->
+
+    <!-- @COMPONENT: AboutSection [business story and location] -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">About Infyra Computer Services</h2>
+                    <p class="text-lg text-gray-600 mb-6" data-mock="true">
+                        Founded in Barasat, Infyra Computer Services has been serving the local community with reliable IT solutions and professional digital marketing training. Our mission is to bridge the technology gap and empower individuals and businesses with modern digital skills.
+                    </p>
+                    <p class="text-gray-600 mb-8" data-mock="true">
+                        With years of experience in computer repair, maintenance, and digital marketing, we combine technical expertise with personalized service. Our comprehensive courses are designed to meet industry standards and prepare students for successful careers in the digital age.
+                    </p>
+                    
+                    <div class="space-y-4" data-mock="true">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-cyan mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-navy">Our Location</h4>
+                                <p class="text-gray-600" data-bind="business.address">Barasat 2, Golabari Bazar, PIN 743423</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-phone text-cyan mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-navy">Contact Number</h4>
+                                <p class="text-gray-600" data-bind="business.phone">+91 6289727242</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-envelope text-cyan mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-navy">Email Address</h4>
+                                <p class="text-gray-600" data-bind="business.email">jk9092745@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-light-gray rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-navy mb-6">Why Choose Us?</h3>
+                    <div class="space-y-6" data-mock="true">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-award text-cyan"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-2">Professional Expertise</h4>
+                                <p class="text-gray-600 text-sm">Years of experience in IT services and digital marketing training</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-cyan"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-2">Quick Turnaround</h4>
+                                <p class="text-gray-600 text-sm">Fast and efficient service delivery for all computer repairs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-dollar-sign text-cyan"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-2">Affordable Pricing</h4>
+                                <p class="text-gray-600 text-sm">Competitive rates for all services and courses</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-users text-cyan"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-2">Local Community Focus</h4>
+                                <p class="text-gray-600 text-sm">Dedicated to serving the Barasat community with personalized attention</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- @COMPONENT: ContactSection [contact form and business details] -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Ready to get started? Contact us for computer services or digital marketing course enrollment.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-navy mb-6">Send Us a Message</h3>
+                    <form class="space-y-6" data-implementation="Submit to database with validation">
+                        <!-- @STATE: formData:{name,email,phone,message} = {} -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent transition-all"
+                                   placeholder="Enter your full name" data-bind="formData.name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent transition-all"
+                                   placeholder="Enter your email address" data-bind="formData.email">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent transition-all"
+                                   placeholder="Enter your phone number" data-bind="formData.phone">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <select id="subject" name="subject" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent transition-all" data-bind="formData.subject">
+                                <option value="">Select a subject</option>
+                                <option value="computer-repair">Computer Repair Service</option>
+                                <option value="digital-marketing">Digital Marketing Course</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent transition-all resize-none"
+                                      placeholder="Enter your message" data-bind="formData.message"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-cyan hover:bg-cyan/90 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+                                data-event="click:handleContactSubmit" data-implementation="Should validate form and store in database">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-navy mb-6">Contact Information</h3>
+                        <div class="space-y-6" data-mock="true">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-cyan"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-navy mb-1">Address</h4>
+                                    <p class="text-gray-600" data-bind="business.fullAddress">Barasat 2, Golabari Bazar<br>PIN 743423, West Bengal</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-cyan"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-navy mb-1">Phone</h4>
+                                    <p class="text-gray-600" data-bind="business.phone">+91 6289727242</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-cyan"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-navy mb-1">Email</h4>
+                                    <p class="text-gray-600" data-bind="business.email">jk9092745@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-cyan"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-navy mb-1">Business Hours</h4>
+                                    <p class="text-gray-600" data-mock="true">Mon - Sat: 9:00 AM - 7:00 PM<br>Sunday: 10:00 AM - 5:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cyan to-blue-600 rounded-xl shadow-lg p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+                        <p class="mb-6" data-mock="true">Join hundreds of satisfied customers who trust Infyra for their computer services and digital marketing education.</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button class="bg-white text-cyan px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex-1" data-event="click:callBusiness">
+                                <i class="fas fa-phone mr-2"></i>Call Now
+                            </button>
+                            <button class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-cyan transition-colors flex-1" data-event="click:showBusinessRegistration">
+                                <i class="fas fa-user-plus mr-2"></i>Register
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer [site footer with links] -->
+    <footer class="bg-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="text-cyan text-2xl font-bold mb-4">
+                        <i class="fas fa-desktop mr-2"></i>Infyra
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md" data-mock="true">
+                        Professional computer services and digital marketing training in Barasat. Empowering individuals and businesses with modern technology solutions.
+                    </p>
+                    <div class="flex space-x-4" data-mock="true">
+                        <a href="#" class="text-gray-300 hover:text-cyan transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-cyan transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-cyan transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-cyan transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2" data-mock="true">
+                        <li><a href="#home" class="text-gray-300 hover:text-cyan transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-cyan transition-colors">Services</a></li>
+                        <li><a href="#courses" class="text-gray-300 hover:text-cyan transition-colors">Digital Marketing</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-cyan transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-cyan transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-300" data-mock="true">
+                        <li data-bind="business.address">Barasat 2, Golabari Bazar</li>
+                        <li data-bind="business.pin">PIN 743423</li>
+                        <li data-bind="business.phone">+91 6289727242</li>
+                        <li data-bind="business.email">jk9092745@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300" data-mock="true">
+                    © 2024 Infyra Computer Services. All rights reserved. | Built with modern web technologies
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- @COMPONENT: AuthModals [login and registration modals] -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4" data-implementation="Show/hide with authentication state management">
+        <div class="bg-white rounded-xl max-w-md w-full p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-navy">Login</h3>
+                <button class="text-gray-400 hover:text-gray-600" data-event="click:closeLoginModal">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form class="space-y-6" data-implementation="Authenticate with Replit Auth">
+                <div>
+                    <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" id="loginEmail" required 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent">
+                </div>
+                
+                <div>
+                    <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <input type="password" id="loginPassword" required 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent">
+                </div>
+                
+                <button type="submit" class="w-full bg-cyan hover:bg-cyan/90 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                    Login
+                </button>
+            </form>
+            
+            <p class="text-center mt-4 text-gray-600" data-mock="true">
+                Don't have an account? 
+                <button class="text-cyan hover:text-cyan/80 font-medium" data-event="click:switchToRegister">Register here</button>
+            </p>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4" data-implementation="Show/hide with user registration workflow">
+        <div class="bg-white rounded-xl max-w-md w-full p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-navy">Register</h3>
+                <button class="text-gray-400 hover:text-gray-600" data-event="click:closeRegisterModal">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form class="space-y-6" data-implementation="Store user data in PostgreSQL database">
+                <div>
+                    <label for="registerName" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                    <input type="text" id="registerName" required 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent">
+                </div>
+                
+                <div>
+                    <label for="registerEmail" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" id="registerEmail" required 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent">
+                </div>
+                
+                <div>
+                    <label for="registerPhone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" id="registerPhone" 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent">
+                </div>
+                
+                <div>
+                    <label for="registerPassword" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <input type="password" id="registerPassword" required 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent">
+                </div>
+                
+                <div>
+                    <label for="registerService" class="block text-sm font-medium text-gray-700 mb-2">Interested In</label>
+                    <select id="registerService" required 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan focus:border-transparent">
+                        <option value="">Select service</option>
+                        <option value="computer-services">Computer Services</option>
+                        <option value="digital-marketing">Digital Marketing Course</option>
+                        <option value="both">Both Services & Course</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="w-full bg-cyan hover:bg-cyan/90 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                    Create Account
+                </button>
+            </form>
+            
+            <p class="text-center mt-4 text-gray-600" data-mock="true">
+                Already have an account? 
+                <button class="text-cyan hover:text-cyan/80 font-medium" data-event="click:switchToLogin">Login here</button>
+            </p>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: AuthModals -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        (function() {
+            // Basic modal functionality for demonstration
+            const loginModal = document.getElementById('loginModal');
+            const registerModal = document.getElementById('registerModal');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            // Modal controls
+            window.showLoginModal = () => {
+                loginModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+            
+            window.closeLoginModal = () => {
+                loginModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            };
+            
+            window.showRegisterModal = () => {
+                registerModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+            
+            window.closeRegisterModal = () => {
+                registerModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            };
+            
+            window.switchToRegister = () => {
+                closeLoginModal();
+                showRegisterModal();
+            };
+            
+            window.switchToLogin = () => {
+                closeRegisterModal();
+                showLoginModal();
+            };
+            
+            // Mobile menu toggle
+            window.toggleMobileMenu = () => {
+                mobileMenu.classList.toggle('hidden');
+            };
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80; // Account for fixed header
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Close modals when clicking outside
+            [loginModal, registerModal].forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // Form submission handlers (placeholder)
+            document.querySelectorAll('form').forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission logic
+                    console.log('Form submitted:', form);
+                });
+            });
+            
+            // Placeholder functions for button events
+            window.scrollToServices = () => {
+                document.getElementById('services').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
+            
+            window.scrollToCourses = () => {
+                document.getElementById('courses').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
+            
+            window.showEnrollmentModal = () => {
+                // TODO: Implement course enrollment modal
+                alert('Course enrollment functionality to be implemented');
+            };
+            
+            window.callBusiness = () => {
+                window.location.href = 'tel:+916289727242';
+            };
+            
+            window.showBusinessRegistration = () => {
+                showRegisterModal();
+            };
+            
+            window.handleContactSubmit = (e) => {
+                e.preventDefault();
+                // TODO: Implement contact form submission to database
+                alert('Contact form submission to be implemented');
+            };
+        })();
+    </script>
+</body>
+</html>
